@@ -116,5 +116,21 @@ def draw_a_picture(point, n, color, window):
 
     return circle2
 
+    point2 = rg.Point(100, 300)
+    radius = 50
+    circle1 = rg.Circle(rg.Point(point2.x, point2.y), radius)
+    circle1.attach_to(window)
+    window.render()
+    color = circle1.fill_color = 'green'
+    n = 4
+
+    for k in range(n):
+        circle2 = rg.Circle(rg.Point(point2.x + 25, point2.y + 15), radius)
+        circle2.fill_color = color
+        circle2.attach_to(window)
+        window.render(0.5)
+        window.continue_on_mouse_click()
+    return circle2
+
 
 main()
